@@ -2,7 +2,7 @@ import random
 import torch
 from torch.utils.data import Dataset
 import os
-from src.utils.tokenizer import MultiAppBehaviorTokenizer
+from src.multiapp.tokenizer import MultiAppBehaviorTokenizer
 
 
 class MultiAppDataset(Dataset):

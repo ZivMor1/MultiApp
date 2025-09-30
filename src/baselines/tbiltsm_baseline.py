@@ -1,4 +1,4 @@
-from src.utils.temporal_embeddings import TemporalEmbedding
+from src.multiapp.temporal_embeddings import TemporalEmbedding
 from src.utils.general import ModelConfig
 import torch
 import torch.nn as nn

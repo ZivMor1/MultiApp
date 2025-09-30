@@ -1,4 +1,4 @@
-from src.utils.temporal_embeddings import TimeSeqPreprocessor
+from src.multiapp.temporal_embeddings import TimeSeqPreprocessor
 import gc
 import torch
 from transformers import PreTrainedTokenizerFast

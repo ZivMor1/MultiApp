@@ -1,4 +1,4 @@
 *.zip
 *.parquet
 *.pt
-src/artifacts/movielens_embeddings/embeddings_movielens.zip
+src/notebooks/train_mlp_movielens.ipynb
