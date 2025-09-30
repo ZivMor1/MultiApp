@@ -1,4 +1,3 @@
 *.zip
 *.parquet
 *.pt
-src/notebooks/train_mlp_movielens.ipynb
