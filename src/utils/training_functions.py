@@ -5,20 +5,6 @@ from tqdm.notebook import tqdm
 import torch.nn as nn
 
 
-# def create_dataloader(x, y, batch_size=32, shuffle=True):
-#     g = torch.Generator().manual_seed(42)
-#     dataset = TensorDataset(x, y)
-#     loader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, generator=g)
-#     return loader
-#
-#
-# def create_val_hit10rate_dataloader(x, y, flows_id, src_padding_masking, batch_size=32, shuffle=True):
-#     g = torch.Generator().manual_seed(42)
-#     dataset = TensorDataset(x.float(), y.long(), flows_id.long(), src_padding_masking.bool())
-#     loader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, generator=g)
-#     return loader
-
-
 def train_step(model, data_loader, loss_fn, optimizer, device):
     model.train()  # Set the model to training mode
     for inputs, targets in tqdm(data_loader):
