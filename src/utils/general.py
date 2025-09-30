@@ -4,13 +4,11 @@ import torch
 import os
 
 
-
 class ModelConfig:
     def __init__(self, vocab_size, max_time_within_model=10080, model_dim=512):
         self.vocab_size = vocab_size
         self.max_time_within_model = max_time_within_model
         self.model_dim = model_dim
-
 
 
 def set_seed(seed: int = 42):
@@ -30,3 +28,20 @@ def set_seed(seed: int = 42):
     # Optional: disable TF-32 for bit-exact runs
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
+
+
+def flatten_list_of_lists(list_of_lists: list[list]):
+    return [x for xs in list_of_lists for x in xs]
+
+
+def count_model_parameters(model):
+    total_params = sum(p.numel() for p in model.parameters())
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    non_trainable_params = total_params - trainable_params
+    res = f"""
+    Total model parameters: {total_params}
+    Total trainable parameters: {trainable_params}
+    Total non-trainable parameters: {non_trainable_params}
+    """
+    print(res)
+    return total_params, trainable_params, non_trainable_params
