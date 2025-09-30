@@ -11,7 +11,7 @@ Download pre-trained MovieLens-1M embeddings from [v0.1-data release](https://gi
 - `y_train.pt`, `y_val.pt`, `y_test.pt` (target labels)
 
 ### 2. Run the Notebooks
-- **`src/notebooks/train_mlp_movielens.ipynb`**: Train recommendation models with pre-trained embeddings
+- **`src/notebooks/train_mlp_movielens.ipynb`**: Train the MLP recommendation model with pre-trained embeddings. Just follow the cells.
 - **`src/notebooks/movielens_preprocessing_notebook.ipynb`**: Process your own data
 
 ### 3. What You Get
@@ -38,29 +38,28 @@ Download pre-trained MovieLens-1M embeddings from [v0.1-data release](https://gi
 
 ### Core Implementation (`src/multiapp/`)
 - **`tokenizer.py`**: Custom MultiAppBehaviorTokenizer for behavior sequences
-- **`temporal_embeddings.py`**: Time-aware processing and positional encodings
+- **`temporal_embeddings.py`**: Time-aware processing encodings
 - **`dynamic_mlm_dataset_class.py`**: MultiAppDataset for masked language modeling
 - **`mlp_architecture.py`**: MLP models for next-item prediction
 
 ### Baseline Implementations (`src/baselines/`)
-- **`duorec.py`**: Complete DuoRec implementation (RecSys'22)
-- **`tisasrec.py`**: Complete TiSASRec implementation with time-aware attention
-- **`tbiltsm_baseline.py`**: TBiLSTM baseline implementation
+- **`duorec.py`**: DuoRec implementation
+- **`tisasrec.py`**: TiSASRec implementation
+- **`tbiltsm_baseline.py`**: T-BiLSTM baseline implementation
 
 ### Utilities (`src/utils/`)
 - **`evaluation_functions.py`**: Hit@K, NDCG@K evaluation metrics
-- **`training_functions.py`**: Training loops and model evaluation
+- **`training_functions.py`**: Full Training loops
 - **`general.py`**: Model configuration and reproducibility utilities
-- **`preprocessing_seq.py`**: Sequence preprocessing helpers
+- **`preprocessing_seq.py`**: Sequence preprocessing helpers, for converting sequences into 'transformer'-core model input
 
 ### Ready-to-Use Notebooks (`src/notebooks/`)
-- **`movielens_preprocessing_notebook.ipynb`**: Complete data preprocessing pipeline
-- **`train_mlp_movielens.ipynb`**: End-to-end training example with pre-trained embeddings
+- **`movielens_preprocessing_notebook.ipynb`**: Complete data preprocessing pipeline for MovieLens-1M
+- **`train_mlp_movielens.ipynb`**: End-to-end training example with pre-trained embeddings attached in this repo
 
 ### Shared Data (Download Required)
-- **Pre-trained embeddings**: MovieLens-1M embeddings extracted from MultiApp model
+- **Pre-trained embeddings**: MovieLens-1M embeddings extracted from MultiApp model after label-free extension for MovieLens vocab
 - **Train/Val/Test splits**: Ready-to-use data splits for immediate experimentation
-- **Vocabulary files**: Token mappings and metadata
 
 ## Installation
 
