@@ -2,13 +2,13 @@ from tqdm import tqdm
 import torch
 import torch.nn as nn
 import math
-from typing import Literal, List
+from typing import List
 from src.utils.general import ModelConfig
 
 
 class TimeSeqPreprocessor:
     def __init__(self, max_time, max_length_of_sequence, time_pad_token="[TIME_PAD]",
-                 padding_side = "left", return_attention_mask: bool = False):
+                 padding_side="left", return_attention_mask: bool = False):
 
         self.max_time = max_time
         self.time_pad_id = max_time + 1

@@ -48,9 +48,6 @@ def evaluate_recommender(model: torch.nn.Module,
     total_loss, total_examples = 0.0, 0
     hit_sum, ndcg_sum = 0.0, 0.0
 
-    # for inputs, mask, targets in data_loader: # todo erase
-    #     inputs, mask = inputs.to(device), mask.to(device)
-
     for inputs, targets in data_loader:
         inputs = inputs.to(device)
         targets = targets.to(device)

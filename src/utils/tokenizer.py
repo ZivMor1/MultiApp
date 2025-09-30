@@ -1,7 +1,7 @@
 import json
 import os
 from transformers import PreTrainedTokenizerFast
-from tokenizers import Tokenizer, pre_tokenizers, models
+from tokenizers import Tokenizer, pre_tokenizers
 from tokenizers.models import WordLevel
 
 
